@@ -18,7 +18,15 @@
     <form method="post" action="/blog/add">
         @csrf
         <input type="title" name="title" id="title" placeholder="Введите название" class="form-control"></br>
-        <textarea name="description" id="description" placeholder="Введите описание" class="form-control"></textarea></br>
+        <textarea name="descriptions" id="descriptions" placeholder="Введите описание" class="form-control"></textarea></br>
         <button type="submit" class="btn btn-success">Добавить</button>
     </form>
+<h1>Новости</h1>
+    @foreach($news as $el)
+    <div class="alert alert-warning">
+        <h3> {{ $el->title }} </h3>
+        <p>{{ $el->descriptions }}</p>
+
+    </div>
+    @endforeach
 @endsection
